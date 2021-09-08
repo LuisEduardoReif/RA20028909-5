@@ -31,7 +31,7 @@
 
   <main class="d-flex container align-items-center" style="height: calc(100vh - 56px); ">
     <div class="container-fluid border rounded p-5" style="box-shadow: 1px 2px 6px 4px rgba(0,0,0,0.1)">
-      <button type="button" class="btn btn-primary">Voltar</button>
+      <a type="button" class="btn btn-primary"class= "nav-link" href="./alunos.php">Voltar</a>
 
       <form action="editar-aluno.php" method="POST" class="mt-5">
         <div class="row mt-4">
