@@ -18,10 +18,10 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item active">
+          <li class="nav-item ">
             <a class="nav-link" href="./alunos.php">Alunos</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item active">
             <a class="nav-link" href="./cursos.php">Cursos</a>
           </li>
         </ul>
@@ -31,14 +31,14 @@
 
   <main class="d-flex container align-items-center" style="height: calc(100vh - 56px); ">
     <div class="container-fluid border rounded p-5" style="box-shadow: 1px 2px 6px 4px rgba(0,0,0,0.1)">
-      <a type="button" class="btn btn-primary" class= "nav-link" href="./alunos.php">Voltar</a>
+      <button type="button" class="btn btn-primary" href="./cursos.php" >Voltar</button>
 
       <div class="row mt-5">
         <div class="col-md-3">
           <p class="font-weight-bold">ID:</p>
         </div>
         <div class="col-md-6">
-          <p class="font-weight-bold">Nome:</p>
+          <p class="font-weight-bold">Nome do curso:</p>
         </div>
         <div class="col-md-3">
           <p class="font-weight-bold">Status:</p>
@@ -57,34 +57,25 @@
       </div>
       <div class="row mt-4">
         <div class="col-md-3">
-          <p class="font-weight-bold">Telefone:</p>
-        </div>
-        <div class="col-md-6">
-          <p class="font-weight-bold">Curso:</p>
+          <p class="font-weight-bold">Data de Início:</p>
         </div>
         <div class="col-md-3">
-          <p class="font-weight-bold">Criado em:</p>
+          <p class="font-weight-bold">Data de término:</p>
+        </div>
+        <div class="col-md-6">
+          <p class="font-weight-bold">Descrição:</p>
         </div>
       </div>
       <div class="row">
         <div class="col-md-3">
-          <p>42 99999-9999</p>
-        </div>
-        <div class="col-md-6">
-          <p>Sistemas para Internet</p>
+          <p>01/05/2018</p>
         </div>
         <div class="col-md-3">
           <p>05/01/2001</p>
+          
         </div>
-      </div>
-      <div class="row mt-4">
         <div class="col-md-6">
-          <p class="font-weight-bold">Email:</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-          <p>teste@teste.com.br</p>
+          <p>Sistemas para Internet</p>
         </div>
       </div>
     </div>

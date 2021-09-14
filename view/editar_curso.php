@@ -18,7 +18,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item">
+          <li class="nav-item ">
             <a class="nav-link" href="./alunos.php">Alunos</a>
           </li>
           <li class="nav-item active">
@@ -31,7 +31,7 @@
 
   <main class="d-flex container align-items-center" style="height: calc(100vh - 56px); ">
     <div class="container-fluid border rounded p-5" style="box-shadow: 1px 2px 6px 4px rgba(0,0,0,0.1)">
-      <a type="button" class="btn btn-primary"class= "nav-link" href="./cursos.php">Voltar</a>
+      <button type="button" class="btn btn-primary"  href="./cursos.php">Voltar</button>
 
       <form action="editar-aluno.php" method="POST" class="mt-5">
         <div class="row mt-4">
