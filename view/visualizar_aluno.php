@@ -25,6 +25,30 @@
     $student[] = $student1;
 
   }
+
+  $sql2 = $pdo->query("SELECT * FROM courses WHERE id = $student[0]->getCourse().toString()");
+
+  $array2 = [];
+
+  if($sql2->rowCount() > 0) {
+    $data2 = $sql2->fetch();
+
+    $courses = new Courses();
+    $courses->setId($data2['id']);
+    $courses->setNameCourse($data2['nameCourse']);
+    $courses->setDescription($data2['description']);
+    $courses->setDateStart($data2['dateStart']);
+    $courses->setDateFinish($data2['dateFinish']);
+    $courses->setStatus($data2['status']);
+    $courses->setCreatedAt($data2['created_at']);
+    $courses->setUpdatedAt($data2['updated_at']);
+
+    $array2[] = $courses;
+  }
+
+  var_dump($array2)
+  
+
 ?>
 
 <!DOCTYPE html>
@@ -60,7 +84,7 @@
 
   <main class="d-flex container align-items-center" style="height: calc(100vh - 56px); ">
     <div class="container-fluid border rounded p-5" style="box-shadow: 1px 2px 6px 4px rgba(0,0,0,0.1)">
-      <button type="button" class="btn btn-primary" href="./alunos.php" >Voltar</button>
+      <a href='./alunos.php' type="button" class="btn btn-primary">Voltar</a>
 
       <div class="row mt-5">
         <div class="col-md-3">
@@ -100,7 +124,7 @@
           <p><?=$student[0]->getPhone();?></p>
         </div>
         <div class="col-md-6">
-          <p><?=$student[0]->getCourse();?></p>
+          <p><?=$array2[0]->getNameCourse();?></p>
         </div>
         <div class="col-md-3">
           <p><?=$student[0]->getCreatedAt();?></p>
