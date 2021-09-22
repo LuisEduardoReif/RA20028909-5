@@ -72,7 +72,7 @@ class Student {
   }
 
   public function getCreatedAt() {
-    return $this->created_at;
+    return date('d-m-Y H:i', strtotime($this->created_at));
   }
 
   public function setCreatedAt($createdAt) {
