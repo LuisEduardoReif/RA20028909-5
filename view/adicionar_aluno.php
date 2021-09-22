@@ -1,3 +1,33 @@
+<?php 
+  include '../config.php';
+  include '../models/Courses.php';
+
+  $sql = $pdo->query("SELECT * FROM courses");
+
+  $array = [];
+
+  if($sql->rowCount() > 0){
+
+  $data = $sql->fetchAll();
+
+  foreach($data as $row) {
+    $courses = new Courses();
+    $courses->setId($row['id']);
+    $courses->setNameCourse($row['nameCourse']);
+    $courses->setDescription($row['description']);
+    $courses->setDateStart($row['dateStart']);
+    $courses->setDateFinish($row['dateFinish']);
+    $courses->setStatus($row['status']);
+    $courses->setCreatedAt($row['created_at']);
+    $courses->setUpdatedAt($row['updated_at']);
+
+    $array[] = $courses;
+  }
+
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -31,7 +61,7 @@
 
   <main class="d-flex container align-items-center" style="height: calc(100vh - 56px); ">
     <div class="container-fluid border rounded p-5" style="box-shadow: 1px 2px 6px 4px rgba(0,0,0,0.1)">
-      <button type="button" class="btn btn-primary" href="./aluno.php">Voltar</button>
+      <a type="button" href="./alunos.php" class="btn btn-primary">Voltar</a>
 
       <form action="../controllers/adicionar_aluno_action.php" method="POST" class="mt-5" >
         <div class="row mt-4">
@@ -46,7 +76,6 @@
           <div class="col-md-7"><input type="text" class="form-control" name="name" id="name" aria-describedby="name"></div>
           <div class="col-md-5">
             <select class="form-control" aria-label="Selecione" name="status">
-              <option selected="">.:Selecione:.</option>
               <option value="1">Ativo</option>
               <option value="0">Inativo</option>
             </select>
@@ -65,8 +94,9 @@
           <div class="col-md-8">
             <select class="form-control" aria-label="Selecione" name="course">
               <option selected="">.:Selecione:.</option>
-              <option value="1">Sistemas para Intenet</option>
-              <option value="2">Engenharia de Software</option>
+              <?php foreach($array as $course) :?>
+                <option value="<?=$course->getId();?>"><?=$course->getNameCourse();?></option>
+              <?php endforeach; ?>
             </select>
           </div>
         </div>
@@ -84,7 +114,6 @@
         </div>
 
         <button type="submit" class="btn btn-success mr-2">Salvar</button>
-        <button type="submit" class="btn btn-danger">Cancelar</button>
       </form>
     </div>
   </main>
