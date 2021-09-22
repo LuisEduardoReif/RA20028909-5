@@ -56,8 +56,8 @@
               <td class="align-middle"><?php if($student->getStatus() == 1) {echo 'Ativo';} else {echo 'Inativo';}?></td>
               <td style="width: 25%">
                 <a type="button" class="btn btn-primary" href="./visualizar_aluno.php?id=<?=$student->getId();?>">Visualizar</a>
-                <a type="button" class="btn btn-secondary" href="./editar_aluno.php">Editar</a>
-                <a type="button" class="btn btn-danger">Excluir</a>
+                <a type="button" class="btn btn-secondary" href="./editar_aluno.php?id=<?=$student->getId();?>">Editar</a>
+                <a type="button" class="btn btn-danger" href="../controllers/excluir_aluno_action.php?id=<?=$student->getId();?>">Excluir</a>
               </td>
             </tr>
             <?php endforeach; ?>
