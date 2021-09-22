@@ -1,10 +1,12 @@
 <?php 
 session_start();
 
-if($_SESSION['ra'] == "200289095"){
-  header("Location: http://localhost/RA20028909-5/view/alunos.php");
-  exit; 
-};
+if(isset($_SESSION['ra'])) {
+  if($_SESSION['ra'] == "20028909-5"){
+    header("Location: http://localhost/RA20028909-5/view/alunos.php");
+    exit; 
+  };
+}
 ?>
 
 <!doctype html>
