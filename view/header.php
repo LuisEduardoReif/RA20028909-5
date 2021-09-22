@@ -9,6 +9,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+
   <title>Sistema escolar</title>
 </head>
 
@@ -20,10 +21,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item ">
-            <h4 class="nav-link" >Controle interno</h4>
-          </li>
-          <li class="nav-item ">
+          <li class="nav-item active">
             <a class="nav-link" href="./alunos.php">Alunos</a>
           </li>
           <li class="nav-item">
