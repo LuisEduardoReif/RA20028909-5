@@ -10,26 +10,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
 
-  <title>Sistema escolar</title>
+  <title></title>
 </head>
 
 <body>
   <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd;">
+    <a class="navbar-brand" href="#">Sistema escolar</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="./alunos.php">Alunos</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="./cursos.php">Cursos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../controllers/deslogar.php">Sair</a>
-          </li>
+            <a class=nav-link href="../controllers/deslogar.php">Sair</a>
+          </li> 
         </ul>
       </div>
     </nav>
