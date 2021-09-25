@@ -1,6 +1,8 @@
 <?php
   include_once '../config.php';
   include_once '../models/Student.php';
+  include_once '../models/Courses.php';
+
 
   $id = $_GET['id'];
 
@@ -25,40 +27,34 @@
     $student[] = $student1;
 
   }
+
+  $sql2 = $pdo->query('SELECT * FROM courses');
+
+  $array2 = [];
+
+  if($sql2->rowCount() > 0) {
+    $data2 = $sql2->fetchAll();
+
+    foreach($data2 as $item) {
+      $courses = new Courses();
+      $courses->setId($item['id']);
+      $courses->setNameCourse($item['nameCourse']);
+      $courses->setDescription($item['description']);
+      $courses->setDateStart($item['dateStart']);
+      $courses->setDateFinish($item['dateFinish']);
+      $courses->setStatus($item['status']);
+      $courses->setCreatedAt($item['created_at']);
+      $courses->setUpdatedAt($item['updated_at']);
+      $array2[] = $courses;
+    }
+
+  }
   
 
 ?>
 
-<!DOCTYPE html>
-<html lang="pt-br">
+  <?php include_once './header.php'?>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
-
-  <title>Sistema escolar | Cursos</title>
-</head>
-
-<body>
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="./alunos.php">Alunos</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./cursos.php">Cursos</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
 
   <main class="d-flex container align-items-center" style="height: calc(100vh - 56px); ">
     <div class="container-fluid border rounded p-5" style="box-shadow: 1px 2px 6px 4px rgba(0,0,0,0.1)">
@@ -102,8 +98,9 @@
           <div class="col-md-8">
             <select class="form-control" aria-label="Selecione" name="course">
               <option selected="">.:Selecione:.</option>
-              <option value="1">Sistemas para Intenet</option>
-              <option value="2">Engenharia de Software</option>
+              <?php foreach($array2 as $item) :?>
+              <option value="<?=$item->getId();?>" <?php if($student[0]->getCourse() == $item->getId()) echo 'selected'; ?>><?=$item->getNameCourse();?></option>
+              <?php endforeach;?>
             </select></div>
         </div>
         <div class="row mt-4">
