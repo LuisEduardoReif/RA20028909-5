@@ -1,4 +1,6 @@
+
 <?php 
+
 session_start();
 
 if(isset($_SESSION['ra'])) {
@@ -7,6 +9,7 @@ if(isset($_SESSION['ra'])) {
     exit; 
   };
 }
+
 ?>
 
 <!doctype html>
