@@ -57,9 +57,9 @@ if($sql->rowCount() > 0){
                 <td class="align-middle"><?= $courses->getNameCourse();?></td>
                 <td class="align-middle"><?php if($courses->getStatus() == 1) {echo 'Ativo';} else {echo 'Inativo';}?></td>
                 <td style="width: 25%">
-                  <a type="button" class="btn btn-primary" href="./visualizar_curso.php">Visualizar</a>
-                  <a type="button" class="btn btn-secondary" href="./editar_curso.php">Editar</a>
-                  <a type="button" class="btn btn-danger" >Excluir</a>
+                  <a type="button" class="btn btn-primary" href="./visualizar_curso.php?id=<?=$courses->getId();?>">Visualizar</a>
+                  <a type="button" class="btn btn-secondary" href="./editar_curso.php?id=<?=$courses->getId();?>">Editar</a>
+                  <a type="button" class="btn btn-danger" href="../controllers/excluir_curso_action.php?id=<?=$courses->getId();?>">Excluir</a>
                 </td>
               </tr>
             <?php endforeach; ?>
