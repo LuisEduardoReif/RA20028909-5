@@ -39,7 +39,7 @@
       </div>
 
       <div class="row mt-3">
-        <table class="table table-hover table-dark">
+        <table class="table table-hover table-info">
           <thead>
             <tr>
               <th scope="col">ID</th>
