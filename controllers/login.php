@@ -20,6 +20,4 @@ if($inputRA && $inpuPassword) {
 header("Location: http://localhost/RA20028909-5/");
 exit;
 
- //var_dump($ra, $password);
-
 ?>
