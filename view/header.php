@@ -29,7 +29,7 @@
             <a class="nav-link" href="./cursos.php">Cursos</a>
           </li>
           <li class="nav-item">
-            <a class=nav-link href="../controllers/deslogar.php">Sair</a>
+            <a class="nav-link" href="../controllers/deslogar.php">Sair</a>
           </li> 
         </ul>
       </div>
