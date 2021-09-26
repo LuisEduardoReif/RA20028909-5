@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 25-Set-2021 às 23:54
+-- Tempo de geração: 26-Set-2021 às 04:37
 -- Versão do servidor: 10.4.19-MariaDB
 -- versão do PHP: 8.0.7
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `ra200289095`
 --
+CREATE DATABASE IF NOT EXISTS `ra200289095` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `ra200289095`;
 
 -- --------------------------------------------------------
 
@@ -27,6 +29,7 @@ SET time_zone = "+00:00";
 -- Estrutura da tabela `courses`
 --
 
+DROP TABLE IF EXISTS `courses`;
 CREATE TABLE `courses` (
   `id` int(11) NOT NULL,
   `nameCourse` varchar(200) NOT NULL,
@@ -45,7 +48,7 @@ CREATE TABLE `courses` (
 INSERT INTO `courses` (`id`, `nameCourse`, `description`, `dateStart`, `dateFinish`, `status`, `created_at`, `updated_at`) VALUES
 (1, 'sistema pra internet', 'curso legal', '2001-01-10', '2050-12-20', 1, '2021-09-23 02:29:30', '2021-09-25 21:50:47'),
 (2, 'analise e desenvolvimento de sistemas ', 'curso legal', '2011-01-10', '2050-12-20', 1, '2021-09-23 02:29:36', '2021-09-25 21:49:12'),
-(3, 'ciências da computação ', 'em breve', '2011-01-11', '2029-12-20', 1, '2021-09-25 18:48:25', '2021-09-25 21:48:13');
+(3, 'ciências da computação ', 'em breve', '2011-01-11', '2029-12-20', 0, '2021-09-25 18:48:25', '2021-09-26 02:36:05');
 
 -- --------------------------------------------------------
 
@@ -53,6 +56,7 @@ INSERT INTO `courses` (`id`, `nameCourse`, `description`, `dateStart`, `dateFini
 -- Estrutura da tabela `students`
 --
 
+DROP TABLE IF EXISTS `students`;
 CREATE TABLE `students` (
   `id` int(11) NOT NULL,
   `name` varchar(150) NOT NULL,
@@ -100,7 +104,7 @@ ALTER TABLE `students`
 -- AUTO_INCREMENT de tabela `courses`
 --
 ALTER TABLE `courses`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `students`
