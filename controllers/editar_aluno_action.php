@@ -21,7 +21,6 @@
     $newStudent->setCourse($course);  
   }
 
-  var_dump($status);
   
   $sql = $pdo->prepare("UPDATE students SET name = :name, email = :email, password = :password, phone = :phone, course = :course, status = :status, updated_at = current_timestamp() WHERE id = :id");
 
